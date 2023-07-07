@@ -1,13 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
 
+
 *{
+    /* outline: solid black 2px; */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+:root {
+    --dark-blue: #1B1C57;
+    --light-blue: #1D4ED8; 
+}
 
 header {
+    position: sticky;
+    top: 0;
     width: 100%;
+    padding: min(15px, 2vh) clamp(20px, 5vw, 150px) min(15px, 2vh) clamp(20px, 5vw, 150px);
+    z-index: 100;
+    background-color: aqua;
+}
+.menu_items{
+    position: fixed;
+    display: grid;
+    place-items: center;
+    background-color: gray;
+    top: 0;
+    right: 0;
+    width: 60vw;
+    height: 100vh;
+    z-index: 9;
+}
+.menu_items ul li{
+    display: block;
+    list-style: none;
+    text-align: center;
+    /* padding: 10rem 2em; */
+}
+.menu_items ul{
+    display: flex;
+    flex-direction: column;
+    gap: 7vh;
+}
+.menu_items ul li a{
+    text-decoration: none;
+    color: var(--dark-blue);
+    font-family: 'Work Sans',sans-serif;
+    font-size: clamp(16px, 4vh, 30px);
+    font-style: normal;
+    font-weight: 500;
 }
 nav{
     display: flex;
@@ -15,23 +56,33 @@ nav{
     align-items: center;
 }
 nav ul{
-    display: flex;
-    gap: ;
+    display: none;
+    gap: clamp(10px, 4vw, 75px);
 }
 nav ul li{
+    display: block;
     list-style: none;
 }
-nav ul li a{
+.men_text{
     text-decoration: none;
-    color: #1B1C57;
+    color: #555;
     font-family: 'Work Sans',sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;    
 }
+nav ul li:hover{
+    transform: scale(1.1);
+    /* transition: ease-in-out 0.2s; */
+}
+.men_text:hover{
+    color: var(--dark-blue);
+    font-weight: 600;
+}
+
 .btn_sdl{
-    display: flex;
-    padding: 15px 35px;
+    display: none;
+    padding: 15px 25px;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -41,10 +92,35 @@ nav ul li a{
 }
 .btn_sdl p{
     font-family: Work Sans;
-    font-size: 16px;
+    font-size: clamp(10px, 1vw, 20px);
+    /* font-size: 16px; */
     font-weight: 500;
     color: #FFF;
 }
+.btn_sdl:hover{
+    transform: scale(1.08);
+    box-shadow: 2.5px 2.5px 5px black;
+    /* padding: 15px 30px; */
+    /* background: linear-gradient(45deg, var(--light-blue), red); */
+    background: var(--light-blue);
+    transition: ease-in-out 0.5s;
+}
 .open_menu{
-    display: none;
+    display: block;
+    border: none;
+    background: transparent;
+}
+@media  screen and (min-width: 1025px) {
+    .btn_sdl{
+        display: flex;
+    }
+    nav ul{
+        display: flex;
+    }
+    .open_menu{
+        display: none;
+    }
+    .menu_items{
+        display: none;
+    }
 }
