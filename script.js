@@ -5,6 +5,7 @@ const blurry = document.querySelector(".blur");
 const blurryx = document.querySelector(".blurx");
 const overlay = document.querySelector(".overlay");
 const overlayx = document.querySelector(".overlayx");
+const waves = document.getElementById("waves");
 
 let check_open = false;
 open_menu.addEventListener('click', function() {
@@ -22,8 +23,11 @@ open_menu.addEventListener('click', function() {
         blurryx.classList.remove("blur-body");
         overlay.style.display = "none";
         overlayx.style.display = "none";
+        waves.style.display = "block";
+
     }
     else{
+        waves.style.display = "none";
         menu_img.setAttribute("src", "images/cancel.svg");
         mob_menu.style.right = "0";
         check_open = true;
