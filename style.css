@@ -7,6 +7,39 @@
   padding: 0;
   box-sizing: border-box;
 }
+main{
+  position: relative;
+}
+.gradient{
+  display: none;
+  position: absolute;
+  top: 26.5vh;
+  left: -20vw;
+  width: 40vw;
+  height: 40vw;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, 
+    rgba(130, 187, 252, 0.9) 0%,
+    rgba(171, 216, 241, 0.7) 40%,
+    rgba(255, 255, 255, 0.4) 70%,
+    rgba(255, 255, 255, 0) 100%
+  )
+}
+.gradient2{
+  display: none;
+  position: absolute;
+  top: -30vh;
+  right: -25vw;
+  width: 40vw;
+  height: 40vw;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, 
+    rgba(130, 187, 252, 0.9) 0%,
+    rgba(171, 216, 241, 0.7) 40%,
+    rgba(255, 255, 255, 0.4) 70%,
+    rgba(255, 255, 255, 0) 100%
+  )
+}
 .no-scroll {
   overflow: hidden;
 }
@@ -36,14 +69,15 @@ header {
   position: sticky;
   top: 0;
   width: 100%;
-  padding: min(15px, 2vh) clamp(20px, 5vw, 150px) min(15px, 2vh)
-    clamp(20px, 5vw, 150px);
+  padding: min(15px, 2vh) 24px min(15px, 2vh)
+    24px;
   z-index: 100;
   background-color: white;
 }
 .waves {
-  top: 2.5%;
-  right: 20%;
+  top: 0;
+  right: 12%;
+  width: 60vw;
   position: absolute;
   transform: rotate(10deg);
   z-index: 150;
@@ -54,6 +88,7 @@ header {
 }
 
 .menu_items {
+  border-left: 2px solid var(--light-blue);
   position: fixed;
   display: grid;
   border: none;
@@ -123,7 +158,6 @@ nav ul li:hover {
 .men_text:hover {
   color: var(--dark-blue);
   font-weight: 600;
-  border-left: 2px solid var(--light-blue);
 }
 
 .btn_sdl {
@@ -228,16 +262,19 @@ nav ul li:hover {
   display: block;
 }
 .thick {
+  position: relative;
   height: 9px;
   background-color: var(--light-blue);
   /* border: var(--light-blue); */
   margin: 0;
+  z-index: 90;
 }
 .about_us{
     padding: 24px 24px 0;
     display: flex;
     gap: 10px;
     flex-direction: column;
+    position: relative;
 }
 .the_h4 {
   font-family: var(--work);
@@ -306,7 +343,320 @@ nav ul li:hover {
   flex-direction: column;
   gap: 20px;
 }
+.services{
+  padding: 60px 24px 0;
+}
+.ser_title{
+  text-align: center;
+}
+.ser_title h2{
+  padding: 14px 0 46px;
+}
+.service_cards{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+}
+.s_card{
+  height: 234px;
+  width: 278px;
+  position: relative;
+  padding-top: 50px;
+}
+.s_card img{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 8;
+}
+.s_card div{
+  height: 184px;
+  border-radius: 5px;
+  border: 1px solid var(--light-gray, #DEDEDE);
+  padding-top: 66px;
+  text-align: center;
+  z-index: 4;
+}
+.s_card h4{
+  font-family: var(--work);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--light-blue);
+  padding-bottom: 26px;
+}
+.s_card p{
+  font-family: var(--work);
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 20px;
+  padding-bottom: 14px;
+}
+.in_card:hover{
+  color: #ffffff;
+  background-color: var(--light-blue);
+  transform: scale(1.05);
+  box-shadow: 0px 4px 20px 0px rgba(12, 82, 137, 0.20);
+  transition: ease 0.3s;
+}
+.in_card:hover .th4{
+  color: #ffffff;
+}
+.iner_flx{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.our_team_cards{
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: center;
+}
+.spcd{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.our_team{
+  padding: 60px 24px 0;
+}
+.team_intro{
+  text-align: center;
+}
+.team_intro h2{
+  padding: 14px 0 46px;
+}
+.team_profile{
+  position: relative;
+}
+.profile_pic{
+  width: 100%;
+  display: block;
+}
+.team_card{
+  width: 278px;
+  border-radius: 5px;
+  background: var(--pure-white, #FFF);
+  box-shadow: 0px 4px 20px 0px rgba(45, 102, 246, 0.349);
+  overflow: hidden;
+}
+.team_socials{
+  top: 0;
+  position: absolute;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  transition: ease 0.5s;
+  
+}
+.team_card:hover{
+  transform: scale(1.07);
+  transition: ease 500ms;
+}
+.team_card:hover .team_socials{
+  background-color: #1d4fd88c;
+}
+.media img{
+  padding: 0 5px;
+}
+.media{
+  position: absolute;
+  /* top: 50%; */
+  bottom: 0;
+  left: 47%;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: ease 0.5s;
+}
+.team_card:hover .media{
+  bottom: 50%;
+  opacity: 1;
+}
+.mem_name{
+  color: var(--black-1, #333);
+  font-family: var(--work);
+  font-size: 20px;
+  font-weight: 600;
+  padding: 20px 0 4px 0;
+}
+.team_card:hover .mem_name{
+  color: var(--light-blue);
+}
+.credit{
+  text-align: center;
+}
+.credit p{
+  color: var(--black-2, #666);
+  font-family: var(--work);
+  font-size: 16px;
+  font-weight: 400;
+  padding-bottom: 20px;
+}
+.port_show{
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: center;
+}
+.portf{
+  padding: 60px 24px 50vh;
+}
+.port_text{
+  text-align: center;
+}
+.port_text h2{
+  padding: 14px 0 46px;
+}
+.porth h4{
+  color: #FFF;
+  font-family: var(--work);
+  font-size: clamp(14px, 2.7vw, 17px);
+  text-align: center;
+  font-weight: 500;
+}
+.porth p{
+  color: rgba(255, 255, 255, 0.86);
+  font-family: Work Sans;
+  font-size: clamp(9px, 2vw, 13.45px);
+  font-weight: 400;
+}
+.img_them{
+  width: 100%;
+  display: block;
+}
+.port_img{
+  position: relative;
+  width: clamp(277px, 65vw, 550px);
+  border-radius: 4.231px;
+  overflow: hidden;
+}
+
+.port_bac{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background: transparent;
+}
+.h_grp{
+  padding: 0 10%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  top: 120%;
+  justify-content: space-between;
+  transition: ease 0.5s;
+}
+.port_img:hover{
+  transform: scale(1.07);
+  transition: ease 0.5s;
+}
+.port_img:hover .port_bac{
+  background: linear-gradient(0deg, #1D4ED8 0%, rgba(217, 217, 217, 0.00) 100%);
+}
+.port_img:hover .h_grp{
+  top: 80%;
+}
+
+@media screen and (max-width: 300px) and (min-width: 230px){
+  .s_card{
+    width: 90%;
+  }
+  .in_card p{
+    font-size: 12px;
+  }
+  .team_card{
+    width: 90%;
+  }
+  .media img{
+    padding: 0 0;
+  }
+  .port_img{
+    width: 95%;
+  }
+  .h_grp{
+    padding: 0 4%;
+  }
+  .porth h4{
+    font-size: 10px;
+  }
+  .porth p{
+    font-size: 6px;
+  }
+}
+@media screen and (min-width: 767px) {
+  .waves {
+    display: none;
+  }
+  header{
+    padding-left: 7vw;
+    padding-right: 7vw;
+  }
+  .them{
+    width: 299px;
+  }
+  .tipsy{
+    height: 251px;
+  }
+  .menu_items {
+    width: 60vw;
+    right: -60vw;
+  }
+  .intro {
+    padding: 0 7vw;
+  }
+  .about_us{
+    padding: 41px 7vw 0;
+  }
+  .abt_img{
+    flex-direction: row;
+    justify-content: center;
+  }
+  .iner_flx{
+    flex-direction: row;
+  }
+  .s_card{
+    width: 30vw;
+  }
+  .in_card{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .spcd{
+    flex-direction: row;
+    gap: 40px;
+  }
+  .team_card{
+    width: 30vw;
+  }
+  .our_team_cards{
+    gap: 40px;
+  }
+}
+
+
 @media screen and (min-width: 1025px) {
+  .gradient, .gradient2{
+    display: block;
+  }
+  .waves{
+    display: block;
+    top: -90vh;
+    right: -39vw;
+    width: 37.3vw;
+    transform: rotate(-140.631deg);
+    z-index: 0;
+  }
   .btn_sdl {
     display: flex;
   }
@@ -336,9 +686,6 @@ nav ul li:hover {
   .man {
     width: 50%;
   }
-  .waves {
-    display: none;
-  }
   .thick {
     height: 25px;
   }
@@ -351,27 +698,67 @@ nav ul li:hover {
   .abt_img{
     width: 50%;
   }
-}
-@media screen and (min-width: 767px) {
-  .them{
-    width: 299px;
-  }
-  .tipsy{
-    height: 251px;
-  }
-  .menu_items {
-    width: 60vw;
-    right: -60vw;
-  }
-  .intro {
-    padding: 0 7vw;
-  }
-  .about_us{
-    padding: 41px 7vw 0;
-  }
-  .abt_img{
+  .port_show{
     flex-direction: row;
     justify-content: center;
   }
-  
+  .port_img{
+    width: 27vw;
+  }
+  .h_grp{
+    padding: 0 4%;
+  }
+  .porth h4{
+    font-size: 12px;
+  }
+  .porth p{
+    font-size: 10px;
+  }
+}
+@media  screen and (min-width: 1280px) {
+  .s_card{
+    width: 278px;
+  }
+  .service_cards{
+    gap: 10px;
+  }
+  .iner_flx{
+    gap: 10px;
+  }
+  .service_cards{
+    flex-direction: row;
+    justify-content: center;
+  }
+  .spcd{
+    gap: 15px;
+  }
+  .team_card{
+    width: 278px;
+  }
+  .our_team_cards{
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+  }
+}
+@media  screen and (min-width: 1500px){
+  .service_cards, .iner_flx{
+    gap: 5vw;
+  }
+  .our_team_cards, .spcd{
+    gap: 5vw;
+  }
+  .services, .our_team{
+    padding-left: 7vw;
+    padding-right: 7vw;
+  }
+  .h_grp{
+    padding: 0 10%;
+  }
+  .porth h4{
+    font-size: 17px;
+  }
+  .porth p{
+    font-size: 14px;
+  }
 }
