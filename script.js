@@ -40,4 +40,54 @@ open_menu.addEventListener('click', function() {
 })
 
 
-// console.log(width);
+// carousel
+// const btn = document.querySelector('#btn');
+const slides = document.querySelectorAll(".slide");
+const lbtn = document.querySelector('.slider__btn--left');
+const rbtn = document.querySelector('.slider__btn--right');
+const slider = document.querySelector('.slider');
+
+lbtn.addEventListener('click', function() {
+    lbtn.classList.add('clicked');
+    console.log(`okk`);
+    setTimeout(function() {
+        lbtn.classList.remove('clicked');
+    }, 200);
+});
+rbtn.addEventListener('click', function() {
+    rbtn.classList.add('clickedr');
+    console.log(`okk`);
+    setTimeout(function() {
+        rbtn.classList.remove('clickedr');
+    }, 200);
+});
+const maxl = slides.length;
+let cursl = 0;
+slides.forEach((s, i) => (
+    s.style.transform = `translateX(${100 * i}%)`
+))
+
+const move = function (curr){
+    slides.forEach((s, i) => (
+        s.style.transform = `translateX(${100 * (i - curr)}%)`
+    ))
+}
+
+rbtn.addEventListener('click', function() {
+    if (cursl === maxl - 1){
+        cursl = 0;
+    }
+    else {
+        cursl++;
+    }
+    move(cursl)
+})
+lbtn.addEventListener('click', function() {
+    if (cursl === 0){
+        cursl = maxl - 1;
+    }
+    else {
+        cursl--;
+    }
+    move(cursl)
+})
