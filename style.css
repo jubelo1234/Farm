@@ -9,6 +9,7 @@
 }
 body{
   max-width: 2500px;
+  overflow-x: hidden;
 }
 main{
   position: relative;
@@ -1120,6 +1121,7 @@ footer{
   }
   .about_us{
     flex-direction: row;
+    gap: 20px;
   }
   .ab_info{
     width: 45%;
