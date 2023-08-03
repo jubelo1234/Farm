@@ -10,35 +10,36 @@
 
 
     <div class="menu_items" id="mob_menu">
-    <ul class="mob__nav">
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="index.html#about__us">ABOUT US</a></li>
-        <li><a href="index.html#our__servicees">SERVICES</a></li>
-        <li><a href="#">BLOG</a></li>
-        <li><a href="#">CONTACT</a></li>
-    </ul>
+        <ul class="mob__nav">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="index.html#about__us">ABOUT US</a></li>
+          <li><a href="index.html#our__services">SERVICES</a></li>
+          <li><a href="Why_us.html">BLOG</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
     </div>
-    <img src="images/unnamed.png" alt="waves" class="waves wave__other__page" id="waves">
+
+      <img src="images/unnamed.png" alt="waves" class="waves" id="waves">
 
 
     <header>
-    <nav>
-        <img src="images/new_logoo.png" alt="logo" width="109" class="main_logo"/>
-        <ul>
-        <li><a href="index.html" class="men_text">HOME</a></li>
-        <li><a href="index.html#about__us" class="men_text">ABOUT US</a></li>
-        <li><a href="index.html#our__services" class="men_text">SERVICES</a></li>
-        <li><a href="#" class="men_text">BLOG</a></li>
-        <li><a href="#" class="men_text">CONTACT</a></li>
-        </ul>
-        <a href="schedule_page.html">
-          <button class="btn_sdl">
-            <img src="images/vector.svg" alt="svg" />
-            <p>Book Schedule</p>
-          </button>
-        </a>
-        <button class="open_menu"><img src="images/menu.svg" alt="menu_icon" id="menu_img" width="32"/></button>
-    </nav>
+        <nav>
+          <img src="images/new_logoo.png" alt="logo" width="109" class="main_logo"/>
+          <ul>
+            <li><a href="index.html" class="men_text">HOME</a></li>
+            <li><a href="index.html#about__us" class="men_text">ABOUT US</a></li>
+            <li><a href="index.html#our__services" class="men_text">SERVICES</a></li>
+            <li><a href="Why_us.html" class="men_text">BLOG</a></li>
+            <li><a href="#" class="men_text">CONTACT</a></li>
+          </ul>
+          <a href="#">
+            <button class="btn_sdl">
+                <img src="images/vector.svg" alt="svg" />
+                <p>Book Schedule</p>
+            </button>
+          </a>
+          <button class="open_menu"><img src="images/menu.svg" alt="menu_icon" id="menu_img" width="32"/></button>
+        </nav>
     </header>
 
     <main class="blur abt_main">
@@ -50,48 +51,71 @@
         </div>
         <div class="overlay"></div>
 
-        <!-- ///////// TEXT /////////////// -->
-        <section class="main__section">
-            
-            <div class="why__choose__wypa">
-                <h3>Why choose Wypa?</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Laoreet morbi tincidunt elit nunc. Ultricies nam sit pharetra, fringilla aliquet molestie. Lorem ipsum dolor sit amet,
-                </p>
+        <form class="schedule__form">
+            <div class="payment__choice">
+                <div>
+                    <input type="radio" name="payment" id="before">
+                    <label for="before">
+                        Pay before service
+                    </label>
+                </div>
+                <div>
+                    <input type="radio" name="payment" id="after">
+                    <label for="after">
+                        Pay after service
+                    </label>
+                </div>
             </div>
+            <div class="input_field">
+                <div class="nameAddress">
+                    <div class="indiv">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" class="fullName">
+                    </div>
+                    
+                    <div class="indiv">
+                        <label for="address">Address</label>
+                        <input type="text" name="address" id="address">
+                    </div>
+                </div>
+                <div class="cat_phone">
+                    <div class="indiv">
+                        <label for="category">Service Category</label>
+                        <select name="category" id="category">
+                            <option value="" disabled selected class="place">Select Category</option>
+                            <option value="houseCleaning">House Cleaning</option>
+                            <option value="laundry">Laundry</option>
+                            <option value="Gardening">Gardening</option>
+                            <option value="bushClearing">Bush Clearing</option>
+                        </select>
+                    </div>
 
-            <div class="text__section save__five">
-                <h2>When you book a cleaner on wypa you save over 5%</h2>
-                <p>
-                    Looking for a reliable and professional cleaners to maintain your home or office? Look no further than <span>Wypa!</span> Here, you can book a cleaner online in just a few simple steps, getting matched with top-rated domestic cleaners in your area. Whether you need a one-time deep clean or are looking for someone to keep your place tidy on a regular basis, our Cleaning company has the perfect professional cleaner for you. Plus, with our easy-to-use app and user-friendly online platform, booking and tracking your cleaning service has never been easier. So why wait? book a cleaner online to start enjoying the benefits of having that extra help around the house!
-                </p>
+                    <div class="indiv" id="myDiv">
+                        <label for="telnumber">Phone Number</label>
+                        <input type="tel" id="telnumber" name="telnumber" placeholder="+234 |">
+                    </div>
+                </div>
+                <div class="gen_note">
+                    <div class="indiv">
+                        <label for="gender">Gender</label>
+                        <select name="gender" id="gender">
+                            <option value="" disabled selected class="place">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">FeMale</option>
+                        </select>
+                    </div>
+
+                    <div class="indiv">
+                        <label for="note">Note</label>
+                        <textarea name="note" id="note" cols="30" rows="1" placeholder="Describe what you want..."></textarea>
+                    </div>
+                </div>
             </div>
-
-            <div class="text__section easy__booking">
-                <h2>We have easy booking system to book a domestic cleaner</h2>
-                <p>
-                    Our easy-to-use website makes it quick and simple to book a cleaner online, with just a few clicks. Whether you need someone to help keep your house organized and spotless on a regular basis, or you need an extra pair of hands to help out after an event or party, <span>Wypa</span> has the perfect solution for you. Plus, our detailed cleaning service tracking feature ensures that you always know exactly what’s going on with your bookings, so you can rest assured that you’re getting top-notch service every time. So why wait? Book a cleaner online today and take the hassle out of keeping your home or office clean and organized!
-                </p>
-            </div>
-
-            <div class="text__section easy__booking2">
-                <h2>We have easy booking system to book a domestic cleaner</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Laoreet morbi tincidunt elit nunc. Ultricies nam sit pharetra, fringilla aliquet molestie. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Laoreet morbi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Laoreet morbi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Laoreet morbi.
-                </p>
-            </div>
-
-            <div class="but_container">
-             <a href="schedule_page.html">
-                <button class="schedule__button">
-                  <img src="images/vector.svg" alt="svg" />
-                  <p>Book Schedule</p>
-                </button>
-             </a>
-            </div>
-        </section>
-
-
+            <button class="schedule__button book__now">
+                <p>Book Service now</p>
+            </button>
+        </form>
+          
 
         <!-- ////////////// THE FORM  ///////////// -->
 

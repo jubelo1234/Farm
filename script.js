@@ -6,25 +6,31 @@ const blurryx = document.querySelector(".blurx");
 const overlay = document.querySelector(".overlay");
 const overlayx = document.querySelector(".overlayx");
 const waves = document.getElementById("waves");
+const mobile_links = document.querySelector('.mob__nav');
+const mobileNavItems = mobile_links.querySelectorAll('a');
 
+//////// function to close navbar ////////
 let check_open = false;
+const closeNavMenu = function (){
+    if (window.innerWidth <= 767){
+        mob_menu.style.right = "-100vw";
+    }
+    else{
+        mob_menu.style.right = "-60vw";
+    }
+    menu_img.setAttribute("src", "images/menu.svg");
+    check_open = false;
+    document.body.classList.remove("no-scroll");
+    blurry.classList.remove("blur-body");
+    blurryx.classList.remove("blur-body");
+    overlay.style.display = "none";
+    overlayx.style.display = "none";
+    waves.style.display = "block";
+}
+
 open_menu.addEventListener('click', function() {
     if (check_open){
-        menu_img.setAttribute("src", "images/menu.svg");
-        if (window.innerWidth <= 767){
-            mob_menu.style.right = "-100vw";
-        }
-        else{
-            mob_menu.style.right = "-60vw";
-        }
-        check_open = false;
-        document.body.classList.remove("no-scroll");
-        blurry.classList.remove("blur-body");
-        blurryx.classList.remove("blur-body");
-        overlay.style.display = "none";
-        overlayx.style.display = "none";
-        waves.style.display = "block";
-
+        closeNavMenu();
     }
     else{
         waves.style.display = "none";
@@ -38,6 +44,15 @@ open_menu.addEventListener('click', function() {
         overlayx.style.display = "block";
     }
 })
+
+//////// event listener to close the mobile menu if the items are clicked //////////////
+
+mobileNavItems.forEach(item => {item.addEventListener('click', function(){
+    closeNavMenu();
+})})
+// mobile_links.addEventListener('mouseenter', function(){
+//     closeNavMenu();
+// })
 
 
 // carousel
