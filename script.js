@@ -8,9 +8,12 @@ const overlayx = document.querySelector(".overlayx");
 const waves = document.getElementById("waves");
 const mobile_links = document.querySelector('.mob__nav');
 const mobileNavItems = mobile_links.querySelectorAll('a');
+const hamburgerMenuFrInnrPages = document.querySelector('.menu__other')
 
 //////// function to close navbar ////////
 let check_open = false;
+
+
 const closeNavMenu = function (){
     if (window.innerWidth <= 767){
         mob_menu.style.right = "-100vw";
@@ -28,22 +31,40 @@ const closeNavMenu = function (){
     waves.style.display = "block";
 }
 
-open_menu.addEventListener('click', function() {
-    if (check_open){
-        closeNavMenu();
-    }
-    else{
-        waves.style.display = "none";
-        menu_img.setAttribute("src", "images/cancel.svg");
-        mob_menu.style.right = "0";
-        check_open = true;
-        document.body.classList.add("no-scroll");
-        blurry.classList.add("blur-body");
-        blurryx.classList.add("blur-body");
-        overlay.style.display = "block";
-        overlayx.style.display = "block";
-    }
-})
+const openNavMenu = function (){
+    menu_img.setAttribute("src", "images/cancel.svg");
+    mob_menu.style.right = "0";
+    check_open = true;
+    document.body.classList.add("no-scroll");
+    blurry.classList.add("blur-body");
+    blurryx.classList.add("blur-body");
+    overlay.style.display = "block";
+    overlayx.style.display = "block";
+}
+
+
+if (window.location.pathname === '/index.html') {
+    open_menu.addEventListener('click', function() {
+        if (check_open){
+            closeNavMenu();
+        }
+        else{
+            waves.style.display = "none";
+            openNavMenu();
+        }
+    })
+} else{
+    hamburgerMenuFrInnrPages.addEventListener('click', function() {
+        if (check_open){
+            closeNavMenu();
+        }
+        else{
+            openNavMenu();
+        }
+    })
+}
+
+
 
 //////// event listener to close the mobile menu if the items are clicked //////////////
 
@@ -117,9 +138,9 @@ slides.forEach((s, i) => (
     s.style.transform = `translateX(${100 * (i - 1)}%)`
     ))
     
-const move = function (curr){
-    slides.forEach((s, i) => (
-        s.style.transform = `translateX(${100 * (i - curr)}%)`
+    const move = function (curr){
+        slides.forEach((s, i) => (
+            s.style.transform = `translateX(${100 * (i - curr)}%)`
     ))
     mains(curr);
     them_img(curr);
@@ -171,3 +192,5 @@ dotcont.addEventListener('click', function(e){
         active_dot(slide);
     }
 })
+
+/////// calling the remove placeholder function
